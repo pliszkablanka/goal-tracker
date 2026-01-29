@@ -1,22 +1,109 @@
-# Goal & Task Tracker
+# Goal & Task Tracker – System zarządzania celami osobistymi
 
-Aplikacja desktopowa służąca do zarządzania celami życiowymi i śledzenia postępów w realizacji zadań. Projekt został zrealizowany w języku Python przy użyciu frameworka Flet (interfejs graficzny) oraz bazy danych SQLite (przechowywanie danych).
+## 1. Charakterystyka oprogramowania
 
-Aplikacja łączy w sobie funkcjonalności listy zadań (To-Do List) z trackerem nawyków, oferując dodatkowo moduł analityczny do wizualizacji postępów.
+### a. Nazwa skrócona
+**GoalTracker**
 
-## 🚀 Główne funkcjonalności
+### b. Nazwa pełna
+**Goal & Task Tracker – System zarządzania celami osobistymi**
 
-- **Zarządzanie Celami**: Tworzenie celów głównych z definicją nazwy, opisu, kategorii oraz terminu wykonania (Deadline).
-- **System Zadań**: Przypisywanie mniejszych zadań do konkretnych celów (relacja 1:N).
-- **Kategorie**: Wizualne rozróżnienie celów za pomocą ikon (Zdrowie, Praca, Nauka, Finanse, Inne).
-- **Kalendarz**: Wbudowany wybór daty dla terminów realizacji.
-- **Moduł Analizy**: Interaktywne wykresy słupkowe pokazujące liczbę wykonanych zadań w ciągu ostatnich 7 dni.
-- **Filtrowanie Danych**: Możliwość filtrowania wykresów dla wszystkich celów łącznie lub dla konkretnego wybranego celu.
-- **Trwałość Danych**: Wszystkie informacje są zapisywane w lokalnym pliku bazy danych (`goals.db`).
+### c. Sumaryczny opis ze wskazaniem celów
+
+Aplikacja służąca do zarządzania celami życiowymi i śledzenia postępów w realizacji zadań przy pomocy wykresów. Projekt łączy w sobie funkcjonalności listy zadań (To-Do-List) w postaci zarządzania celami i mniejszymi zadaniami niezbędnymi do ich osiągnięcia oraz moduł analityczny do wizualizacji postępów.
+
+Głównym celem oprogramowania jest umożliwienie użytkownikowi:
+- Łatwego planowania długoterminowych celów
+- Dzielenia ich na mniejsze etapy
+- Monitorowania systematyczności za pomocą interaktywnych wykresów słupkowych
+
+---
+
+## 2. Prawa autorskie
+
+### a. Autorzy
+- **Blanka Pliszka**
+- **Radosław Kozłowski**
+
+### b. Warunki licencyjne
+Oprogramowanie udostępniane na licencji **MIT**. Pozwala ona na swobodne używanie, kopiowanie, modyfikowanie i rozpowszechnianie oprogramowania, pod warunkiem zachowania informacji o prawach autorskich.
+
+Pod warunkiem zachowania informacji o prawach autorskich.
+
+---
+
+## 3. Specyfikacja wymagań
+
+### a. Lista wymagań funkcjonalnych i pozafunkcjonalnych
+
+| ID | Nazwa | Opis | Priorytet | Kategoria |
+|---|---|---|---|---|
+| F-01 | Zarządzanie Celami | Tworzenie celów głównych z definicją nazwy, opisu oraz terminu wykonania | 1 | Funkcjonalne (Logika) |
+| F-02 | Kategoryzacja | Wizualne rozróżnienie celów za pomocą ikon (Zdrowie, Praca, Nauka, Finanse, Inne) | 2 | Funkcjonalne (UI) |
+| F-03 | System Zadań | Przypisywanie mniejszych zadań do konkretnych celów (relacja jeden do wielu) | 1 | Funkcjonalne (Logika) |
+| F-04 | Kalendarz | Wbudowany wybór daty dla terminów realizacji (Date Picker) | 2 | Funkcjonalne (UI) |
+| F-05 | Śledzenie postępów | Odznaczanie wykonanych zadań (checkbox) i zapisywanie daty wykonania | 1 | Funkcjonalne (Logika) |
+| F-06 | Moduł Analizy | Interaktywne wykresy słupkowe pokazujące liczbę wykonanych zadań w ciągu ostatnich 7 dni | 2 | Funkcjonalne (Analityka) |
+| F-07 | Filtrowanie Danych | Możliwość filtrowania wykresów dla wszystkich celów łącznie lub dla konkretnego celu | 2 | Funkcjonalne (Analityka) |
+| PF-01 | Trwałość Danych | Wszystkie informacje są zapisywane w lokalnym pliku bazy danych SQLite (goals.db) | 1 | Pozafunkcjonalne |
+| PF-02 | Responsywność | Interfejs graficzny skaluje się i automatycznie dostosowuje układ elementów do aktualnej rozdzielczości ekranu lub rozmiaru okna. | 2 | Pozafunkcjonalne |
+| PF-03 | Wieloplatformowość | Możliwość uruchomienia aplikacji na systemach desktopowych (Windows, macOS, Linux) oraz mobilnych (Android, iOS) korzystając z tego samego kodu źródłowego. | 3 | Pozafunkcjonalne |
+
+---
+
+## 4. Architektura systemu/oprogramowania
+
+### a. Architektura rozwoju (Środowisko deweloperskie)
+
+Narzędzia wykorzystywane podczas tworzenia oprogramowania:
+
+- **Język programowania:** Python (v3.12.7) – Główny język logiki aplikacji
+- **Edytor kodu:** Visual Studio Code (v1.108) – Środowisko programistyczne (IDE)
+- **System kontroli wersji:** Git (v2.47.1) – Zarządzanie historią zmian
+- **Repozytorium:** GitHub – Zdalne przechowywanie kodu źródłowego
+- **Generatywna Sztuczna Inteligencja:** Google Gemini Pro - Narzędzie wspomagające tworzenie kodu.
+- **Baza wiedzy:** Oficjalna dokumentacja Flet (flet.dev) – Źródło informacji o komponentach i strukturze frameworka.
+
+### b. Architektura uruchomieniowa (Środowisko docelowe)
+
+Technologie wymagane do uruchomienia aplikacji przez użytkownika końcowego:
+
+- **Interpreter:** Python (v3.8 lub nowszy)
+- **Biblioteka GUI:** Flet (v0.80.4) – Framework do budowy interfejsu graficznego
+- **Biblioteka Wykresów:** Flet-Charts (v0.80.2) – Rozszerzenie do wizualizacji danych
+- **Baza Danych:** SQLite3 (v3.51.2) – Wbudowany w Python silnik bazy danych (bezserwerowy)
+
+### c. Prezentacja omawiająca wykorzystywane technologie
+
+Prezentacja zamieszczona w repozytorium projektu pod nazwą **prezentacja_flet**
+
+## 5. Testy
+
+### a. Scenariusze testów
+
+Poniżej przedstawiono scenariusze weryfikujące poprawność działania kluczowych funkcjonalności.
+
+| ID Scenariusza | Opis | Kroki testowe | Oczekiwany rezultat |
+|---|---|---|---|
+| TC-01 | Dodanie nowego celu | 1. Kliknij "+"<br>2. Wpisz nazwę "Test"<br>3. Wybierz kategorię<br>4. Wybierz datę<br>5. Wpisz opis<br>6. Zapisz | Cel pojawia się na liście głównej z odpowiednią ikoną i datą. |
+| TC-02 | Dodanie zadania do celu | 1. Kliknij "Dodaj zadanie" pod celem "Test"<br>2. Wpisz nazwę zadania<br>3. Wpisz opis zadania<br>4. Zatwierdź | Zadanie pojawia się pod wybranym celem. |
+| TC-03 | Wykonanie zadania | 1. Zaznacz checkbox przy zadaniu<br>2. Odznacz checkbox przy zadaniu | Checkbox pozostaje zaznaczony (stan zapisany w bazie, w interfejsie użytkownika zmienia się wygląd zadania). |
+| TC-04 | Weryfikacja wykresu | 1. Przejdź do zakładki "Analiza"<br>2. Sprawdź słupek dla dzisiejszej daty | Słupek wzrósł o liczbę wykonanych zadań w TC-03. |
+| TC-05 | Filtrowanie wykresu | 1. W zakładce "Analiza" wybierz z listy cel "Test" | Wykres pokazuje dane tylko dla celu "Test". |
+
+### b. Sprawozdanie z wykonania scenariuszy testów
+
+Wszystkie powyższe scenariusze **(TC-01 do TC-05)** zostały przeprowadzone w środowisku lokalnym **(Windows 11, Python 3.12.7)**.
+
+**Rezultat:** ✅ **Wszystkie testy zakończone wynikiem POZYTYWNYM**
+
+**Uwagi:**
+- Baza danych poprawnie zachowuje stan aplikacji pomiędzy uruchomieniami
+- Wykresy aktualizują się w czasie rzeczywistym
 
 ## 🛠️ Wymagania i Instalacja
 
-Aby uruchomić projekt lokalnie, wymagany jest zainstalowany interpreter Python (wersja 3.8 lub nowsza).
+Aby uruchomić projekt lokalnie, wymagany jest zainstalowany interpreter Python.
 
 ### 1. Pobranie projektu
 
@@ -51,104 +138,40 @@ python main.py
 Poniżej znajduje się opis poszczególnych plików wchodzących w skład projektu:
 
 - **`main.py`**: Główny plik uruchomieniowy aplikacji. Odpowiada za warstwę prezentacji (Frontend). Zawiera kod budujący interfejs użytkownika w bibliotece Flet, obsługę zdarzeń (kliknięcia, nawigacja) oraz logikę wyświetlania okien dialogowych (modali).
-- **`database.py`**: Plik odpowiedzialny za warstwę dostępu do danych (Backend/Database Layer). Zawiera definicje funkcji SQL, które tworzą tabele, dodają nowe rekordy oraz pobierają dane potrzebne do wyświetlenia listy i wykresów. Oddziela logikę biznesową od interfejsu graficznego.
-- **`requirements.txt`**: Lista zewnętrznych bibliotek Pythona wymaganych do działania projektu (m.in. flet, flet-charts).
-- **`.gitignore`**: Plik konfiguracyjny Gita. Informuje system kontroli wersji, które pliki mają być ignorowane (np. pliki tymczasowe, lokalna baza danych `goals.db` czy foldery środowiska wirtualnego), aby zachować czystość w repozytorium.
+- **`database.py`**: Plik odpowiedzialny za warstwę dostępu do danych (Backend/Warstwa danych). Zawiera definicje funkcji SQL, które tworzą tabele, dodają nowe rekordy oraz pobierają dane potrzebne do wyświetlenia listy i wykresów. Oddziela logikę biznesową od interfejsu graficznego.
+- **`requirements.txt`**: Lista zewnętrznych bibliotek Pythona wymaganych do działania projektu (flet, flet-charts).
+- **`.gitignore`**: Plik konfiguracyjny Gita. Informuje system kontroli wersji, które pliki mają być ignorowane (np. pliki tymczasowe, lokalna baza danych `goals.db`), aby zachować czystość w repozytorium.
 
-## 🗄️ plik database.py
+#### Warstwa Danych (database.py - Backend)
 
-Ten plik pełni rolę warstwy dostępu do danych (Backend). Nie zawiera żadnego kodu odpowiedzialnego za wygląd aplikacji. Jego zadaniem jest komunikacja z bazą danych SQLite za pomocą języka zapytań SQL.
+Odpowiada za komunikację z bazą danych SQLite. Nie zawiera kodu interfejsu.
 
-Poniżej znajduje się opis kluczowych funkcji zaimplementowanych w tym module:
+- **init_db():** Tworzy strukturę relacyjną trzech tabel:
+  - `goals` – Cele główne
+  - `tasks` – Zadania (relacja Jeden-do-Wielu z celami)
+  - `tracker` – Historia wykonania zadań
 
-### `init_db()`
+- **Funkcje CRUD:**
+  - `add_goal` – Dodawanie celów
+  - `add_task` – Dodawanie zadań
+  - `toggle_task` – Zmiana statusu zadania
 
-Funkcja uruchamiana przy starcie aplikacji. Sprawdza, czy plik bazy danych istnieje. Jeśli nie, tworzy go oraz definiuje strukturę trzech powiązanych tabel (Relacyjna Baza Danych):
+- **Analityka (get_stats):** Wykorzystuje zapytania SQL z GROUP BY i JOIN do agregacji danych dla wykresów (ostatnie 7 dni)
 
-- **goals**: Przechowuje cele główne.
-- **tasks**: Przechowuje zadania, które są przypisane do celów za pomocą klucza obcego (FOREIGN KEY). Tworzy to relację Jeden-do-Wielu (Jeden cel może mieć wiele zadań).
-- **tracker**: Tabela historii. Przechowuje informacje o tym, kiedy konkretne zadanie zostało wykonane.
+## Warstwa Prezentacji (main.py - Frontend)
 
-### `add_goal(...)` oraz `add_task(...)`
+Odpowiada za interfejs użytkownika (UI) zbudowany we frameworku Flet. Komunikuje się z warstwą danych.
 
-Funkcje odpowiedzialne za wprowadzanie nowych danych (INSERT). Przyjmują dane wpisane przez użytkownika w formularzach (np. nazwę, opis, datę), dodają do nich automatycznie dzisiejszą datę utworzenia i zapisują w odpowiednich tabelach.
+### Konfiguracja
+- Ustawia polską lokalizację
+- Ustawia parametry ekranu
+- Mapuje ikony kategorii
 
-### `get_goals_with_tasks()`
+### Renderowanie widoków
 
-Kluczowa funkcja dla głównego widoku aplikacji. Wykonuje złożoną operację pobierania danych:
+- **`render_dashboard`** – Dynamiczne tworzenie kart celów i list zadań
+- **`render_stats_view`** – Generowanie skalowalnych wykresów słupkowych z filtrowaniem
 
-1. Najpierw pobiera listę wszystkich celów.
-2. Następnie dla każdego celu wykonuje dodatkowe zapytanie, aby pobrać przypisane do niego zadania.
-3. Zwraca złożoną strukturę danych (lista w liście), którą łatwo wyświetlić w interfejsie graficznym.
-
-### `toggle_task(task_id, date_str)`
-
-Obsługuje logikę "odznaczania" zadań (checkbox). Działa na zasadzie przełącznika:
-
-- Sprawdza, czy dany nawyk jest już zapisany jako wykonany w bazie.
-- **Jeśli TAK** → usuwa wpis z bazy (użytkownik odznaczył checkbox).
-- **Jeśli NIE** → dodaje wpis do bazy (użytkownik zaznaczył checkbox).
-
-### `get_stats(goal_id=None)`
-
-Funkcja analityczna zasilająca wykresy. Wykorzystuje zaawansowane zapytania SQL z łączeniem tabel (JOIN) oraz grupowaniem (GROUP BY).
-
-- Zlicza (COUNT), ile zadań zostało wykonanych w poszczególnych dniach.
-- Obsługuje filtrowanie: jeśli podamy `goal_id`, statystyki zostaną ograniczone tylko do wybranego celu. W przeciwnym razie pokaże sumę dla wszystkich celów.
-- Ogranicza wyniki do ostatnich 7 dni (LIMIT 7), aby wykres był czytelny.
-
-## 🖥️ Plik main.py
-
-Ten plik odpowiada za warstwę prezentacji (Frontend). Został napisany przy użyciu frameworka Flet, który pozwala tworzyć interfejsy graficzne w Pythonie. Kod w tym pliku nie łączy się bezpośrednio z SQL – wykorzystuje do tego funkcje zaimportowane z `database.py`.
-
-Poniżej znajduje się opis kluczowych elementów i funkcji:
-
-### `Konfiguracja i main(page)`
-
-Jest to punkt wejścia do aplikacji.
-
-- **Lokalizacja**: Ustawiamy język polski (pl-PL), aby kalendarz wyświetlał polskie nazwy miesięcy i dni.
-- **Symulacja Mobile**: Ustawiamy sztywną szerokość i wysokość okna (400x800), aby na ekranie komputera aplikacja wyglądała jak uruchomiona na smartfonie.
-
-### `CATEGORY_ICONS`
-
-Słownik (mapa), który przypisuje konkretną ikonkę (np. serce, praca) do nazwy kategorii. Dzięki temu łatwo zarządzać wyglądem w jednym miejscu.
-
-### `render_dashboard()`
-
-Najważniejsza funkcja widoku. Odpowiada za rysowanie głównego ekranu. Działa w pętli:
-
-1. Czyści ekran.
-2. Pobiera listę celów i zadań z bazy danych.
-3. Dla każdego celu tworzy "Kartę" (Container), a w niej generuje listę "Wierszy" z zadaniami.
-4. Jeśli zadanie jest wykonane, zmienia jego kolor na jasny turkus i przekreśla tekst.
-
-### `render_stats_view(target_goal_id)`
-
-Moduł analityczny wykorzystujący bibliotekę `flet_charts`.
-
-- **Skalowanie**: Funkcja dynamicznie oblicza wysokość słupków, znajdując najwyższą wartość w danych (`max_val`), aby wykres zawsze mieścił się na ekranie.
-- **Oś X i Y**: Generuje etykiety z datami na dole i liczbami po lewej stronie.
-- **Filtr**: Obsługuje listę rozwijaną (Dropdown). Po zmianie wyboru, funkcja uruchamia się ponownie z nowym parametrem `target_goal_id`, filtrując dane.
-
-### System Modalny (AlertDialog)
-
-Aplikacja wykorzystuje wyskakujące okienka do wprowadzania danych, aby nie zaśmiecać głównego ekranu.
-
-- **`add_goal_dialog`**: Formularz dodawania celu. Zawiera pola tekstowe, listę rozwijaną kategorii oraz przycisk otwierający kalendarz (DatePicker).
-- **`add_task_dialog`**: Formularz dodawania zadania.
-- **`current_goal_id_for_task`**: Specjalna zmienna pomocnicza. Zapamiętuje, w "plusa" którego celu kliknął użytkownik, aby wiedzieć, do którego celu przypisać nowe zadanie.
-
-### `save_goal()` oraz `save_task()`
-
-Funkcje zwrotne (Callbacki) przypisane do przycisków "Zapisz".
-
-1. Pobierają wartości wpisane przez użytkownika.
-2. Przekazują je do pliku `database.py`.
-3. Czyszczą formularze.
-4. Zamykają okno dialogowe.
-5. Wywołują `render_dashboard()`, aby natychmiast pokazać nowe dane na ekranie.
-
-### Nawigacja (NavigationBar)
-
-Dolny pasek menu, który pozwala przełączać się między widokiem listy zadań a widokiem analizy danych. Zmiana zakładki wywołuje funkcję `on_nav_change`, która podmienia zawartość głównego kontenera.
+### Interakcja
+- Obsługa formularzy w oknach modalnych (AlertDialog) i wypełnianie danych (TextField)
+- Nawigacja dolna (NavigationBar) do przełączania ekranów
